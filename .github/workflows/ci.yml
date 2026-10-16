@@ -1,0 +1,22 @@
+name: CI
+
+# Runners hospedados do GitHub nao possuem Delphi (licenca).
+# Use um runner self-hosted Windows com RAD Studio instalado e rotulado "delphi".
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: [self-hosted, windows, delphi]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build (GUI + testes)
+        shell: cmd
+        run: |
+          call "%BDS%\bin\rsvars.bat"
+          build.bat
+      - name: Testes unitarios
+        shell: cmd
+        run: bin\DanfePrintTests.exe --exitbehavior:Continue --exclude:integration
