@@ -1,0 +1,11 @@
+{
+  "name": "danfe-print",
+  "description": "Gera DANFE em PDF a partir do XML da NF-e/NFC-e usando ACBr",
+  "version": "0.1.0",
+  "homepage": "",
+  "mainsrc": "src/",
+  "projects": [],
+  "dependencies": {
+    "github.com/Projeto-ACBr-Oficial/ACBr": "*"
+  }
+}

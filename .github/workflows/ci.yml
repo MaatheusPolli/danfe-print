@@ -1,22 +1,22 @@
 name: CI
 
-# Runners hospedados do GitHub nao possuem Delphi (licenca).
-# Use um runner self-hosted Windows com RAD Studio instalado e rotulado "delphi".
+# Suite FPC (Free Pascal): roda em runners hospedados sem licenca do Delphi.
+# Build Delphi/GUI continua manual (IDE ou runner self-hosted com RAD Studio).
 on:
   push:
-    branches: [main]
+    branches: [master, main]
   pull_request:
 
 jobs:
-  build-test:
-    runs-on: [self-hosted, windows, delphi]
+  test-fpc:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build (GUI + testes)
-        shell: cmd
-        run: |
-          call "%BDS%\bin\rsvars.bat"
-          build.bat
-      - name: Testes unitarios
-        shell: cmd
-        run: bin\DanfePrintTests.exe --exitbehavior:Continue --exclude:integration
+        with:
+          submodules: false
+      - name: Instalar Free Pascal
+        run: sudo apt-get update && sudo apt-get install -y fp-compiler fp-units-fcl fp-units-rtl
+      - name: Clonar FPDF-Pascal
+        run: git clone --depth 1 https://github.com/Projeto-ACBr-Oficial/FPDF-Pascal.git third_party/FPDF-Pascal
+      - name: Testes unitarios (FPC)
+        run: sh test-fpc.sh

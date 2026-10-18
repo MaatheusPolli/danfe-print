@@ -50,6 +50,10 @@ sh test-fpc.sh
 
 A suíte DUnitX para Delphi será adicionada junto com a GUI.
 
+A CI (`.github/workflows/ci.yml`) roda esta suíte FPC em runners Linux. A biblioteca **FPDF-Pascal** precisa estar clonada em `third_party/FPDF-Pascal` (é o que o `test-fpc.sh` e o workflow fazem).
+
+Executável de linha de comando com FPC: `DanfePrintFpc.lpr` (gera PDF sem VCL).
+
 ## Compilação (Delphi)
 
 Requer Delphi 12+ com compilação por linha de comando (edições Community Trial não suportam `dcc32` pela linha de comando — nesse caso compile pela IDE) e o ACBr instalado. Veja [docs/instalacao-acbr.md](docs/instalacao-acbr.md).
