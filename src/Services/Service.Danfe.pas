@@ -1,4 +1,4 @@
-unit Service.Danfe;
+﻿unit Service.Danfe;
 
 { Orquestra: carrega/valida o XML e delega a geracao ao IDanfeGenerator.
   Erros previsiveis viram TDanfeResult; excecoes inesperadas sao capturadas e logadas. }

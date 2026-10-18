@@ -1,4 +1,4 @@
-unit Domain.Interfaces;
+﻿unit Domain.Interfaces;
 
 {$IFDEF FPC}{$mode delphi}{$H+}{$ENDIF}
 

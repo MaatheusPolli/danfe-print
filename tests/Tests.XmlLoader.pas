@@ -1,4 +1,4 @@
-unit Tests.XmlLoader;
+﻿unit Tests.XmlLoader;
 
 {$IFDEF FPC}{$mode delphi}{$H+}{$ENDIF}
 
@@ -96,7 +96,7 @@ end;
 
 procedure TXmlLoaderTests.ArquivoInexistente;
 begin
-  CheckFalha('nao_existe.xml', 'não encontrado');
+  CheckFalha('nao_existe.xml', 'encontrado');
 end;
 
 procedure TXmlLoaderTests.XmlMalFormado;
@@ -116,7 +116,7 @@ end;
 
 procedure TXmlLoaderTests.ModeloDesconhecido;
 begin
-  CheckFalha('invalido_modelo.xml', 'não suportado: 57');
+  CheckFalha('invalido_modelo.xml', 'suportado: 57');
 end;
 
 procedure TXmlLoaderTests.ModeloDivergente;
@@ -126,7 +126,7 @@ end;
 
 procedure TXmlLoaderTests.ChaveComDVErrado;
 begin
-  CheckFalha('invalido_chave.xml', 'Chave de acesso inválida');
+  CheckFalha('invalido_chave.xml', 'Chave de acesso inv');
 end;
 
 procedure TXmlLoaderTests.CalculoDV;

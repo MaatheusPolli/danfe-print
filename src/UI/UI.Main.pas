@@ -1,4 +1,4 @@
-unit UI.Main;
+﻿unit UI.Main;
 
 { Janela principal (GUI VCL): casca fina sobre os servicos montados em App.Container.
   Nenhuma regra de negocio aqui; so coleta entrada, chama o servico e mostra o resultado. }
@@ -79,7 +79,7 @@ begin
 
   Lbl := TLabel.Create(Self);
   Lbl.Parent := Self;
-  Lbl.Caption := 'PDF de saída (opcional):';
+  Lbl.Caption := 'PDF de sa'#$ED'da (opcional):';
   Lbl.SetBounds(12, 62, 300, 15);
 
   FEdtSaida := TEdit.Create(Self);
@@ -107,7 +107,7 @@ begin
 
   BtnConfig := TButton.Create(Self);
   BtnConfig.Parent := Self;
-  BtnConfig.Caption := 'Configurações...';
+  BtnConfig.Caption := 'Configura'#$E7#$F5'es...';
   BtnConfig.SetBounds(406, 114, 130, 27);
   BtnConfig.OnClick := BtnConfigClick;
 

@@ -9,7 +9,7 @@ rem     Defina ACBR_DIR para compilar com ACBr real; sem ele usa o gerador FPDF.
 setlocal
 if not exist bin mkdir bin
 set UNITS=src\App;src\Domain;src\Services;src\Infra;src\CLI;src\UI
-set UNITS=%UNITS%;third_party\FPDF-Pascal\source
+set UNITS=%UNITS%;third_party\FPDF-Pascal\source;tests;tests\dunitx
 set NS=System;Winapi;Vcl;Xml;Data;System.Win
 set DEFS=
 if defined ACBR_DIR (

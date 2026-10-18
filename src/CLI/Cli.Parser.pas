@@ -1,4 +1,4 @@
-unit Cli.Parser;
+﻿unit Cli.Parser;
 
 { Interpreta os argumentos de linha de comando (RF07).
   Uso:
@@ -54,27 +54,27 @@ uses
 resourcestring
   SArgDesconhecido = 'Argumento desconhecido: %s';
   SArgSemValor = 'Argumento %s exige um valor';
-  SModoInvalido = 'Modo inválido: %s (use retrato ou paisagem)';
+  SModoInvalido = 'Modo inv'#$E1'lido: %s (use retrato ou paisagem)';
   SArgDuplicado = 'Argumento informado mais de uma vez: %s';
   SEntradaObrigatoria = 'Informe --in <arquivo.xml> ou --in-dir <pasta>';
-  SEntradasExclusivas = '--in e --in-dir não podem ser usados juntos';
-  SOutSemIn = '--out só pode ser usado com --in';
-  SOutDirSemInDir = '--out-dir só pode ser usado com --in-dir';
+  SEntradasExclusivas = '--in e --in-dir n'#$E3'o podem ser usados juntos';
+  SOutSemIn = '--out s'#$F3' pode ser usado com --in';
+  SOutDirSemInDir = '--out-dir s'#$F3' pode ser usado com --in-dir';
 
   STextoAjuda =
     'DanfePrint - gera DANFE em PDF a partir do XML da NF-e/NFC-e' + sLineBreak +
     sLineBreak +
     'Uso:' + sLineBreak +
-    '  DanfePrint --in nota.xml [--out nota.pdf] [opções]' + sLineBreak +
-    '  DanfePrint --in-dir pasta [--out-dir saida] [opções]' + sLineBreak +
+    '  DanfePrint --in nota.xml [--out nota.pdf] [op'#$E7#$F5'es]' + sLineBreak +
+    '  DanfePrint --in-dir pasta [--out-dir saida] [op'#$E7#$F5'es]' + sLineBreak +
     sLineBreak +
-    'Opções:' + sLineBreak +
-    '  --modo retrato|paisagem   orientação do DANFE (padrão: retrato)' + sLineBreak +
+    'Op'#$E7#$F5'es:' + sLineBreak +
+    '  --modo retrato|paisagem   orienta'#$E7#$E3'o do DANFE (padr'#$E3'o: retrato)' + sLineBreak +
     '  --logo arquivo            logotipo a inserir no DANFE' + sLineBreak +
-    '  --quiet                   não escreve nada na saída padrão' + sLineBreak +
+    '  --quiet                   n'#$E3'o escreve nada na sa'#$ED'da padr'#$E3'o' + sLineBreak +
     '  --help, -h                mostra esta ajuda' + sLineBreak +
     sLineBreak +
-    'Códigos de saída: 0 sucesso, 1 erro de processamento, 2 erro de uso.';
+    'C'#$F3'digos de sa'#$ED'da: 0 sucesso, 1 erro de processamento, 2 erro de uso.';
 
 function ArgsDoProcesso: TArray<string>;
 var

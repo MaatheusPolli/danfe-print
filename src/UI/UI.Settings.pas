@@ -1,4 +1,4 @@
-unit UI.Settings;
+﻿unit UI.Settings;
 
 { Dialogo de configuracoes (RF08): logo, orientacao padrao. Persiste via TAppConfig. }
 
@@ -22,7 +22,7 @@ type
 implementation
 
 uses
-  System.SysUtils, Vcl.Dialogs, Vcl.Buttons, Domain.Danfe;
+  System.SysUtils, Vcl.Dialogs, Vcl.Buttons, Domain.Danfe, UI.Format;
 
 constructor TFormSettings.CreateWithConfig(AOwner: TComponent; AConfig: TAppConfig);
 var
@@ -31,7 +31,7 @@ var
 begin
   inherited Create(AOwner);
   FConfig := AConfig;
-  Caption := 'Configurações';
+  Caption := 'Configura'#$E7#$F5'es';
   Position := poOwnerFormCenter;
   ClientWidth := 480;
   ClientHeight := 180;
@@ -55,7 +55,7 @@ begin
 
   Lbl := TLabel.Create(Self);
   Lbl.Parent := Self;
-  Lbl.Caption := 'Orientação padrão:';
+  Lbl.Caption := 'Orienta'#$E7#$E3'o padr'#$E3'o:';
   Lbl.SetBounds(16, 76, 140, 15);
 
   FCmbOrientacao := TComboBox.Create(Self);
@@ -63,7 +63,7 @@ begin
   FCmbOrientacao.Style := csDropDownList;
   FCmbOrientacao.Items.Add('retrato');
   FCmbOrientacao.Items.Add('paisagem');
-  FCmbOrientacao.ItemIndex := Ord(FConfig.Orientacao);
+  FCmbOrientacao.ItemIndex := IndiceOrientacao(FConfig.Orientacao);
   FCmbOrientacao.SetBounds(16, 94, 180, 23);
 
   BtnOk := TButton.Create(Self);
@@ -99,10 +99,7 @@ end;
 procedure TFormSettings.BtnOkClick(Sender: TObject);
 begin
   FConfig.LogoFile := Trim(FEdtLogo.Text);
-  if FCmbOrientacao.ItemIndex = Ord(doPaisagem) then
-    FConfig.Orientacao := doPaisagem
-  else
-    FConfig.Orientacao := doRetrato;
+  FConfig.Orientacao := OrientacaoDoIndice(FCmbOrientacao.ItemIndex);
   FConfig.Salvar;
   ModalResult := mrOk;
 end;

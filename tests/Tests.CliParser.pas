@@ -1,4 +1,4 @@
-unit Tests.CliParser;
+﻿unit Tests.CliParser;
 
 {$IFDEF FPC}{$mode delphi}{$H+}{$ENDIF}
 

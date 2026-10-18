@@ -1,4 +1,4 @@
-unit Service.XmlLoader;
+﻿unit Service.XmlLoader;
 
 { Le e valida a estrutura minima do XML de NF-e/NFC-e (RF01, RF02). }
 

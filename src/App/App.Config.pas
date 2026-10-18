@@ -1,4 +1,4 @@
-unit App.Config;
+﻿unit App.Config;
 
 { Configuracao persistida em INI (RF08): ultima pasta, logo, orientacao padrao. }
 

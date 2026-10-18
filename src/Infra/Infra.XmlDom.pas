@@ -1,4 +1,4 @@
-unit Infra.XmlDom;
+﻿unit Infra.XmlDom;
 
 { Adaptador minimo de XML: isola a diferenca entre o DOM do FPC (fcl-xml)
   e o Xml.XMLDoc do Delphi. Extrai apenas os campos que o XmlLoader usa. }

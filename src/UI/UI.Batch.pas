@@ -1,4 +1,4 @@
-unit UI.Batch;
+﻿unit UI.Batch;
 
 { Dialogo do modo lote (RF06): pasta de XMLs -> pasta de PDFs + relatorio.csv. }
 
@@ -26,7 +26,7 @@ type
 implementation
 
 uses
-  System.SysUtils, Vcl.Dialogs, Vcl.FileCtrl, Domain.Danfe;
+  System.SysUtils, Vcl.Dialogs, Vcl.FileCtrl, Domain.Danfe, UI.Format;
 
 constructor TFormBatch.CreateWithServices(AOwner: TComponent;
   const ABatch: IBatchProcessor; AConfig: TAppConfig);
@@ -61,7 +61,7 @@ begin
 
   Lbl := TLabel.Create(Self);
   Lbl.Parent := Self;
-  Lbl.Caption := 'Pasta de saída (PDFs + relatorio.csv):';
+  Lbl.Caption := 'Pasta de sa'#$ED'da (PDFs + relatorio.csv):';
   Lbl.SetBounds(12, 62, 260, 15);
 
   FEdtSaida := TEdit.Create(Self);
@@ -111,9 +111,9 @@ var
   Ok, Erros: Integer;
   Opts: TDanfeOptions;
 begin
-  if (Trim(FEdtEntrada.Text) = '') or (Trim(FEdtSaida.Text) = '') then
+  if not EntradasPreenchidas(FEdtEntrada.Text, FEdtSaida.Text) then
   begin
-    ShowMessage('Informe a pasta de entrada e a de saída.');
+    ShowMessage('Informe a pasta de entrada e a de sa'#$ED'da.');
     Exit;
   end;
   FConfig.UltimaPasta := FEdtEntrada.Text;
@@ -130,19 +130,14 @@ begin
     Erros := 0;
     for R in Resultados do
     begin
+      FMemo.Lines.Add(LinhaResultadoLote(R));
       if R.Success then
-      begin
-        Inc(Ok);
-        FMemo.Lines.Add('OK    ' + ExtractFileName(R.XmlFile));
-      end
+        Inc(Ok)
       else
-      begin
         Inc(Erros);
-        FMemo.Lines.Add('ERRO  ' + ExtractFileName(R.XmlFile) + ': ' + R.ErrorMessage);
-      end;
     end;
     FMemo.Lines.Add('');
-    FMemo.Lines.Add(Format('Lote concluído: %d sucesso(s), %d erro(s)', [Ok, Erros]));
+    FMemo.Lines.Add(ResumoLote(Ok, Erros));
   finally
     Screen.Cursor := crDefault;
     FBtnRun.Enabled := True;

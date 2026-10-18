@@ -1,4 +1,4 @@
-program DanfePrint;
+﻿program DanfePrint;
 
 { Alvo Delphi/IDE. Sem argumentos abre a GUI VCL; com argumentos roda a CLI
   (mesmo TAppBootstrap.Run usado pelo DanfePrintFpc.lpr). }

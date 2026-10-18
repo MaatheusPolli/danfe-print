@@ -1,4 +1,4 @@
-program DanfePrintTestsFpc;
+﻿program DanfePrintTestsFpc;
 
 { Runner fpcunit (Free Pascal). A suite DUnitX para Delphi sera adicionada
   junto com as partes que dependem do Delphi. }

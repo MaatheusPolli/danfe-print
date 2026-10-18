@@ -1,4 +1,4 @@
-unit Infra.AcbrFacade;
+﻿unit Infra.AcbrFacade;
 
 { Unica unidade que conhece a geracao de PDF do DANFE.
 

@@ -48,7 +48,13 @@ As camadas sem UI e sem ACBr compilam também com **Free Pascal 3.2+** (`{$mode 
 sh test-fpc.sh
 ```
 
-A suíte DUnitX para Delphi será adicionada junto com a GUI.
+A suíte **DUnitX** (Delphi) fica em `tests/DanfePrintTests.dpr` e `tests/dunitx/`, cobrindo as mesmas áreas mais as regras da GUI (`UI.Format`). Para rodar pelo Delphi:
+
+```bat
+bin\DanfePrintTests.exe --exclude:integration
+```
+
+Os testes de integração (geram PDF real pelo ACBr/FPDF) ficam na categoria `integration`.
 
 A CI (`.github/workflows/ci.yml`) roda esta suíte FPC em runners Linux. A biblioteca **FPDF-Pascal** precisa estar clonada em `third_party/FPDF-Pascal` (é o que o `test-fpc.sh` e o workflow fazem).
 

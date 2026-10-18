@@ -1,4 +1,4 @@
-unit Tests.Config;
+﻿unit Tests.Config;
 
 {$IFDEF FPC}{$mode delphi}{$H+}{$ENDIF}
 

@@ -1,4 +1,4 @@
-unit Service.Batch;
+﻿unit Service.Batch;
 
 { Processa uma pasta inteira (RF06): um PDF por XML e relatorio.csv com
   sucesso/erro por arquivo. Um erro isolado nunca aborta o lote. }

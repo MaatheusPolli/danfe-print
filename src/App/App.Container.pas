@@ -1,4 +1,4 @@
-unit App.Container;
+﻿unit App.Container;
 
 { Composition root: monta as dependencias concretas (loader, generator, log,
   service, batch, runner). E o unico ponto que conhece as implementacoes ao

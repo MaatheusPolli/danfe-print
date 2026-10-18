@@ -1,4 +1,4 @@
-unit Tests.AcbrFacade;
+﻿unit Tests.AcbrFacade;
 
 { Teste de integracao do gerador real de PDF (IDanfeGenerator via facade).
 

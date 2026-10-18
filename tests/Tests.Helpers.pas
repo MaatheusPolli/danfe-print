@@ -1,4 +1,4 @@
-unit Tests.Helpers;
+﻿unit Tests.Helpers;
 
 {$IFDEF FPC}{$mode delphi}{$H+}{$ENDIF}
 

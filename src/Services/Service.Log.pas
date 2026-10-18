@@ -1,4 +1,4 @@
-unit Service.Log;
+﻿unit Service.Log;
 
 { Log em arquivo com rotacao diaria (um arquivo por dia). }
 

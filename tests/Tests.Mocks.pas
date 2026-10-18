@@ -1,4 +1,4 @@
-unit Tests.Mocks;
+﻿unit Tests.Mocks;
 
 { Dublês de teste: gerador que grava um "PDF" falso e console em memória. }
 

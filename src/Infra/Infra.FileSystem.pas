@@ -1,4 +1,4 @@
-unit Infra.FileSystem;
+﻿unit Infra.FileSystem;
 
 {$IFDEF FPC}{$mode delphi}{$H+}{$ENDIF}
 

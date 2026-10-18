@@ -1,4 +1,4 @@
-unit Cli.Runner;
+﻿unit Cli.Runner;
 
 { Executa a acao pedida na linha de comando e devolve o exit code. }
 
@@ -45,9 +45,9 @@ uses
 
 resourcestring
   SGerado = 'Gerado: %s';
-  SLoteResumo = 'Lote concluído: %d sucesso(s), %d erro(s)';
+  SLoteResumo = 'Lote conclu'#$ED'do: %d sucesso(s), %d erro(s)';
   SErroUso = 'Erro: %s';
-  SUseHelp = 'Use --help para ver as opções.';
+  SUseHelp = 'Use --help para ver as op'#$E7''#$F5'es.';
 
 procedure TStdConsole.Out(const AText: string);
 begin

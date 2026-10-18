@@ -1,4 +1,4 @@
-unit Domain.Danfe;
+﻿unit Domain.Danfe;
 
 { Tipos de dominio compartilhados por GUI, CLI e servicos. }
 

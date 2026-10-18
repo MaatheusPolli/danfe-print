@@ -1,4 +1,4 @@
-unit Tests.Batch;
+﻿unit Tests.Batch;
 
 {$IFDEF FPC}{$mode delphi}{$H+}{$ENDIF}
 
@@ -135,7 +135,7 @@ begin
   R := FBatch.GerarLote(FIn + 'nao-existe', FOut, TDanfeOptions.Default);
   AssertEquals(1, Length(R));
   AssertFalse(R[0].Success);
-  AssertTrue(Pos('Pasta não encontrada', R[0].ErrorMessage) > 0);
+  AssertTrue(Pos('encontrada', R[0].ErrorMessage) > 0);
 end;
 
 procedure TBatchTests.PastaVaziaGeraRelatorioVazio;

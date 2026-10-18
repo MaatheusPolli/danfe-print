@@ -1,4 +1,4 @@
-unit App.Bootstrap;
+﻿unit App.Bootstrap;
 
 { Decide entre modo GUI e modo CLI a partir dos parametros de linha de comando. }
 
