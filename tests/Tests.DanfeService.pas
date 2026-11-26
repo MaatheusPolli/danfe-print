@@ -41,17 +41,17 @@ procedure TDanfeServiceTests.GeraPdfDeXmlValido;
 var
   R: TDanfeResult;
 begin
-  R := FService.GerarPdf(FixturePath('nfe_autorizada.xml'), FOut + 'sub\a.pdf',
+  R := FService.GerarPdf(FixturePath('nfe_autorizada.xml'), FOut + P('sub\a.pdf'),
     TDanfeOptions.Default);
   AssertTrue(R.ErrorMessage, R.Success);
-  AssertTrue(FileExists(FOut + 'sub\a.pdf'));
+  AssertTrue(FileExists(FOut + P('sub\a.pdf')));
   AssertTrue(FGen.UltimaNota.Autorizada);
 end;
 
 procedure TDanfeServiceTests.SaidaPadraoAoLadoDoXml;
 begin
-  AssertEquals('c:\x\nota.pdf', OutputPadrao('c:\x\nota.xml', ''));
-  AssertEquals('d:\y\nota.pdf', OutputPadrao('c:\x\nota.xml', 'd:\y'));
+  AssertEquals(P('c:\x\nota.pdf'), OutputPadrao(P('c:\x\nota.xml'), ''));
+  AssertEquals(P('d:\y\nota.pdf'), OutputPadrao(P('c:\x\nota.xml'), P('d:\y')));
 end;
 
 procedure TDanfeServiceTests.XmlInvalidoNaoChamaGerador;
