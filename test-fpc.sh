@@ -8,4 +8,6 @@ mkdir -p bin/fpc-units
   -Fusrc/App -Fusrc/Domain -Fusrc/Services -Fusrc/Infra -Fusrc/CLI -Futests \
   -Futhird_party/FPDF-Pascal/source -Fithird_party/FPDF-Pascal/source \
   tests/DanfePrintTestsFpc.lpr
-bin/DanfePrintTestsFpc.exe "$@"
+exe=bin/DanfePrintTestsFpc
+[ -f "$exe.exe" ] && exe="$exe.exe"
+"$exe" "$@"
